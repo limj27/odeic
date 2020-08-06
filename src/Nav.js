@@ -20,17 +20,18 @@ export default class NavBar extends Component {
         return(
             <Navbar color="faded" light>
                 <NavbarBrand href="/"><img src="logo.png" alt="odeic logo" id="logo"></img></NavbarBrand>
-                <NavbarToggler onClick={this.toggle} className="mr-2" />
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <Nav navbar>
+                
+                <Nav className="mr-auto" navbar>
                         <NavItem>
                             <NavLink to="/about" activeClassName="activeLink">About</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink to="/" activeClassName="activeLink">Fill</NavLink>
                         </NavItem>
-                    </Nav>
-                </Collapse>
+                </Nav>
+                    <button className="btn btn-dark" onClick={this.props.signOut}>
+                        sign out
+                    </button>
             </Navbar>
         );
     }
